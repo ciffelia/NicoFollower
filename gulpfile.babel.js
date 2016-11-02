@@ -17,18 +17,21 @@ const options = minimist(process.argv.slice(2), {
 });
 
 gulp.task('clean', callback => {
-  rimraf('./dist', callback);
+  rimraf('./app/dist', callback);
 });
 
 gulp.task('mainJS', () => {
   return gulp.src('./main.js')
+    .pipe($.plumber({ errorHandler: $.notify.onError('<%= error.message %>') }))
+    .pipe((options.env === 'development') ? $.sourcemaps.init() : $.empty())
     .pipe($.babel())
-    .pipe(gulp.dest('./dist'));
+    .pipe((options.env === 'development') ? $.sourcemaps.write('.') : $.empty())
+    .pipe(gulp.dest('./app/dist'));
 });
 
 gulp.task('html', () => {
   return gulp.src('./src/index.html')
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./app/dist'));
 });
 
 gulp.task('renderJSX', () => {
@@ -71,7 +74,7 @@ gulp.task('renderJSX', () => {
       },
       plugins
     }))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./app/dist'));
 });
 
 gulp.task('sass', function() {
@@ -83,7 +86,7 @@ gulp.task('sass', function() {
     .pipe((options.env === 'production') ? $.cleanCss() : $.empty())
     .pipe($.rename('bundle.css'))
     .pipe((options.env === 'development') ? $.sourcemaps.write('.') : $.empty())
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./app/dist'));
 });
 
 gulp.task('watch', function() {

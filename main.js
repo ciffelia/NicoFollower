@@ -15,6 +15,7 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    icon: isDev ? path.join(__dirname, '../../build/icon.ico') : null,
     webPreferences: {
       nodeIntegration: false
     }

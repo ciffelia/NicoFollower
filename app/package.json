@@ -1,0 +1,16 @@
+{
+  "name": "NicoFollower",
+  "version": "0.0.1",
+  "description": "Follow niconico contents",
+  "main": "dist/main.js",
+  "author": "prince <mc.prince.0203@gmail.com> (https://github.com/prince-0203)",
+  "license": "MIT",
+  "homepage": "https://github.com/prince-0203/NicoFollower#readme",
+  "repository": {
+    "url": "https://github.com/prince-0203/NicoFollower.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/prince-0203/NicoFollower/issues"
+  }
+}
