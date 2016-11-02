@@ -1,16 +1,15 @@
 {
-  "name": "NicoFollower",
+  "name": "nico-follower",
   "version": "0.0.1",
   "description": "Follow niconico contents",
   "main": "app/dist/main.js",
   "scripts": {
     "postinstall": "install-app-deps",
     "start": "electron .",
-    "watch": "gulp watch --env development",
-    "build:dev": "gulp build --env development",
-    "build:production": "gulp build --env production",
-    "electron:pack": "build --dir --win --x64 --ia32",
-    "electron:dist": "build --win --x64 --ia32"
+    "watch": "gulp watch",
+    "buildSource": "gulp build",
+    "buildExecutable": "gulp cleanPackageDist && build --dir --win --x64",
+    "buildInstaller": "gulp cleanPackageDist && build --win --x64"
   },
   "author": "prince <mc.prince.0203@gmail.com> (https://github.com/prince-0203)",
   "license": "MIT",
@@ -24,38 +23,21 @@
   },
   "devDependencies": {
     "babel-core": "^6.18.0",
-    "babel-loader": "^6.2.7",
     "babel-preset-env": "^0.0.6",
-    "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "electron": "^1.4.4",
     "electron-builder": "^7.15.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
-    "gulp-clean-css": "^2.0.13",
-    "gulp-empty": "^0.1.1",
     "gulp-load-plugins": "^1.4.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.2.0",
-    "minimist": "^1.2.0",
-    "node-sass": "^3.10.1",
     "rimraf": "^2.5.4",
-    "run-sequence": "^1.2.2",
-    "uglify-save-license": "^0.4.1",
-    "webpack": "^1.13.3",
-    "webpack-stream": "^3.2.0"
-  },
-  "dependencies": {
-    "electron-is-dev": "^0.1.2",
-    "electron-load-devtool": "^0.3.0",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-redux": "^4.4.5",
-    "redux": "^3.6.0"
+    "run-sequence": "^1.2.2"
   },
   "build": {
     "appId": "io.github.prince-0203.nico-follower",

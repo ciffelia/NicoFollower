@@ -1,5 +1,7 @@
 /* eslint-env node */
 
+if(require('electron-squirrel-startup')) process.exit();
+
 import path from 'path';
 import { app, BrowserWindow } from 'electron';
 
@@ -15,10 +17,7 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    icon: isDev ? path.join(__dirname, '../../build/icon.ico') : null,
-    webPreferences: {
-      nodeIntegration: false
-    }
+    icon: isDev ? path.join(__dirname, '../../build/icon.ico') : null
   });
 
   // and load the index.html of the app.
