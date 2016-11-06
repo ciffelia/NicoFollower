@@ -1,12 +1,27 @@
 import React from 'react';
+import { Row, Col } from 'react-materialize';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <span>{this.props.fuga}</span><br/>
-        <button onClick={ () => this.props.handleClick() }>＊増加＊</button>
-      </div>
-    );
-  }
-}
+import ModeTabBar from './ModeTabBar';
+import IncrementChip from '../containers/IncrementChip';
+import IncrementButton from '../containers/IncrementButton';
+
+const App = props => (
+  <div>
+    <ModeTabBar />
+
+    <div className="container">
+      <Row>
+        <Col s={2}>
+          First column
+        </Col>
+        <Col>
+          abc
+        </Col>
+      </Row>
+
+      <IncrementButton /> <IncrementChip />
+    </div>
+  </div>
+);
+
+export default App;

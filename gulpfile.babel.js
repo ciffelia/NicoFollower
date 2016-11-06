@@ -3,6 +3,7 @@
 import gulp from 'gulp';
 import loadPlugins from 'gulp-load-plugins';
 import rimraf from 'rimraf';
+import sassModuleImporter from 'sass-module-importer';
 import runSequence from 'run-sequence';
 
 const $ = loadPlugins();
@@ -20,9 +21,7 @@ gulp.task('mainJS', () => {
     .pipe($.plumber({ errorHandler: $.notify.onError('<%= error.message %>') }))
     .pipe($.sourcemaps.init())
     .pipe($.babel({
-      presets: [
-        ['env', { targets: { node: 6.5 } }]
-      ]
+      plugins: ['transform-es2015-modules-commonjs']
     }))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./app/dist'));
@@ -38,10 +37,8 @@ gulp.task('renderJSX', () => {
     .pipe($.plumber({ errorHandler: $.notify.onError('<%= error.message %>') }))
     .pipe($.sourcemaps.init())
     .pipe($.babel({
-      presets: [
-        'react',
-        ['env', { targets: { node: 6.5 } }]
-      ]
+      presets: ['react'],
+      plugins: ['transform-es2015-modules-commonjs']
     }))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./app/dist'));
@@ -51,9 +48,11 @@ gulp.task('sass', () => {
   return gulp.src('./src/sass/index.scss')
     .pipe($.plumber({ errorHandler: $.notify.onError('<%= error.message %>') }))
     .pipe($.sourcemaps.init())
-    .pipe($.sass.sync({ outputStyle: 'compressed' }))
+    .pipe($.sass({
+      importer: sassModuleImporter(),
+      outputStyle: 'compressed'
+    }))
     .pipe($.autoprefixer('Chrome 53')) // Electronのバージョンアップ時にprocess.versions.chromeで確認する
-    .pipe($.rename('bundle.css'))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./app/dist'));
 });

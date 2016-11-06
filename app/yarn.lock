@@ -4,6 +4,10 @@ asap@~2.0.3:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.5.tgz#522765b50c3510490e52d7dcfe085ef9ba96958f"
 
+classnames@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 core-js@^1.0.0:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
@@ -116,9 +120,17 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-react-dom@^15.3.2:
+react-dom@^15.3.0, react-dom@^15.3.2:
   version "15.3.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.3.2.tgz#c46b0aa5380d7b838e7a59c4a7beff2ed315531f"
+
+react-materialize@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/react-materialize/-/react-materialize-0.17.0.tgz#694a8da2ab37bcc079cfc8234cc0cb6345ab4bf2"
+  dependencies:
+    classnames "^2.2.5"
+    react "^15.3.0"
+    react-dom "^15.3.0"
 
 react-redux@^4.4.5:
   version "4.4.5"
@@ -129,7 +141,7 @@ react-redux@^4.4.5:
     lodash "^4.2.0"
     loose-envify "^1.1.0"
 
-react@^15.3.2:
+react@^15.3.0, react@^15.3.2:
   version "15.3.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.3.2.tgz#a7bccd2fee8af126b0317e222c28d1d54528d09e"
   dependencies:

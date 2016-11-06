@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 if(require('electron-squirrel-startup')) process.exit();
 
 import path from 'path';
@@ -15,8 +13,8 @@ let mainWindow = null;
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 960,
+    height: 640,
     icon: isDev ? path.join(__dirname, '../../build/icon.ico') : null
   });
 
