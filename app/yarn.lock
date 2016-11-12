@@ -123,7 +123,7 @@ js-tokens@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-2.0.0.tgz#79903f5563ee778cc1162e6dcf1a0027c97f9cb5"
 
-keycode@^2.1.1:
+keycode@^2.1.1, keycode@^2.1.7:
   version "2.1.7"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.1.7.tgz#7b9255919f6cff562b09a064d222dca70b020f5c"
 
@@ -180,11 +180,21 @@ object-assign@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.0.tgz#7a3b3d0e98063d43f4c03f2e8ae6cd51a86883a0"
 
+performance-now@^0.2.0, performance-now@~0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
+
 promise@^7.0.3, promise@^7.1.1:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/promise/-/promise-7.1.1.tgz#489654c692616b8aa55b0724fa809bb7db49c5bf"
   dependencies:
     asap "~2.0.3"
+
+raf@^3.1.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/raf/-/raf-3.3.0.tgz#93845eeffc773f8129039f677f80a36044eee2c3"
+  dependencies:
+    performance-now "~0.2.0"
 
 react-addons-create-fragment@^15.0.0:
   version "15.3.2"
@@ -213,6 +223,13 @@ react-event-listener@^0.4.0:
   version "0.10.2"
   resolved "https://codeload.github.com/prince-0203/react-flexbox-grid/tar.gz/99e83415c6adfa2453549ef56566a092d01f6d84"
 
+react-motion:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/react-motion/-/react-motion-0.4.5.tgz#ecc42f692fec9b2de4c92f85e26375071f779b76"
+  dependencies:
+    performance-now "^0.2.0"
+    raf "^3.1.0"
+
 react-redux@^4.4.5:
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-4.4.5.tgz#f509a2981be2252d10c629ef7c559347a4aec457"
@@ -221,6 +238,16 @@ react-redux@^4.4.5:
     invariant "^2.0.0"
     lodash "^4.2.0"
     loose-envify "^1.1.0"
+
+react-swipeable-views:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/react-swipeable-views/-/react-swipeable-views-0.8.0.tgz#8b2365ce2101a8f49420e7c4459ba91a3cd6713c"
+  dependencies:
+    babel-runtime "^6.11.6"
+    keycode "^2.1.7"
+    react-addons-shallow-compare "^0.14.0 || ^15.0.0"
+    react-event-listener "^0.4.0"
+    warning "^3.0.0"
 
 react-tap-event-plugin@^1.0.0:
   version "1.0.0"

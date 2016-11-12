@@ -5,6 +5,8 @@ const IncrementChip = props => (
   <Chip>{props.counter}</Chip>
 );
 
-IncrementChip.propTypes = {};
+IncrementChip.propTypes = {
+  counter: React.PropTypes.number.isRequired
+};
 
 export default IncrementChip;
