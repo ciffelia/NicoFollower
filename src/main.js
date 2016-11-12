@@ -15,6 +15,7 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 960,
     height: 640,
+    title: 'NicoFollower',
     icon: isDev ? path.join(__dirname, '../../build/icon.ico') : null
   });
 

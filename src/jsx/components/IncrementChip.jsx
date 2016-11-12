@@ -1,8 +1,10 @@
 import React from 'react';
-import { Chip } from 'react-materialize';
+import Chip from 'material-ui/Chip';
 
 const IncrementChip = props => (
   <Chip>{props.counter}</Chip>
 );
+
+IncrementChip.propTypes = {};
 
 export default IncrementChip;

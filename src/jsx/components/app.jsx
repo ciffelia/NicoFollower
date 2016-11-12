@@ -1,26 +1,26 @@
 import React from 'react';
-import { Row, Col } from 'react-materialize';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
-import ModeTabBar from './ModeTabBar';
+import TabBar from '../containers/TabBar';
 import IncrementChip from '../containers/IncrementChip';
 import IncrementButton from '../containers/IncrementButton';
 
 const App = props => (
   <div>
-    <ModeTabBar />
+    <TabBar />
 
-    <div className="container">
+    <Grid>
       <Row>
-        <Col s={2}>
+        <Col xs={2}>
           First column
         </Col>
-        <Col>
+        <Col xs={10}>
           abc
         </Col>
       </Row>
+    </Grid>
 
-      <IncrementButton /> <IncrementChip />
-    </div>
+    <IncrementButton /> <IncrementChip />
   </div>
 );
 
