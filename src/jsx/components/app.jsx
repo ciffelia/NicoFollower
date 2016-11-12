@@ -1,13 +1,13 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-import TabBar from '../containers/TabBar';
+import MainTab from '../containers/MainTab';
 import IncrementChip from '../containers/IncrementChip';
 import IncrementButton from '../containers/IncrementButton';
 
 const App = props => (
   <div>
-    <TabBar />
+    <MainTab />
 
     <Grid>
       <Row>

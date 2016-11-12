@@ -5,7 +5,7 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 import SearchTab from '../containers/SearchTab';
 import FeedTab from '../containers/FeedTab';
 
-const TabBar = props => (
+const MainTab = props => (
   <div>
     <Tabs value={props.slideIndex} onChange={props.handleChange}>
       <Tab label="フィード" value={0} />
@@ -18,9 +18,9 @@ const TabBar = props => (
   </div>
 );
 
-TabBar.propTypes = {
+MainTab.propTypes = {
   slideIndex: React.PropTypes.number.isRequired,
   handleChange: React.PropTypes.func.isRequired
 };
 
-export default TabBar;
+export default MainTab;
